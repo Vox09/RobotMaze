@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/destinxxy/Documents/RobotMaze/agent/build",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/agent/inc    -std=c++11 -o CMakeFiles/agent.dir/src/search.cpp.o -c /home/destinxxy/Documents/RobotMaze/agent/src/search.cpp",
+  "file": "/home/destinxxy/Documents/RobotMaze/agent/src/search.cpp"
+}
+]

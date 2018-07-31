@@ -1,0 +1,25 @@
+initial state:      left-up corner
+transition model:   actually travel 
+actions:            choose 4 directions
+goal test:          right-down corner
+                    arbitrary boundary
+path cost:          rectangular grid each step is 1
+
+stragety:           depth-first search 
+  
+  
+log:  
+1.Depth-first generation make the situation that there is only one way from one point to another.  
+  
+2.random open some walls from the original depth-first generated map to form a more complicated  map.  
+  
+3.greedy algorithm is no longer feasible in some cases.
+  
+4.greedy algorithm is always extend the top of the stack if possible, which makes a lot of repeated trials and waste time.
+  
+5.need to operate on the stack to implement A* or other more advanced algorithm  
+
+6.g_limit algorithm: like greedy once dead not back.Fit into real robot but mat not be optimal.
+  
+TODO:  
+1.add go back function and only display current place.

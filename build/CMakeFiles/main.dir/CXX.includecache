@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Maze/inc/maze.hpp
+iostream
+-
+random
+-
+ctime
+-
+cstdlib
+-
+
+../agent/inc/search.hpp
+maze.hpp
+../agent/inc/maze.hpp
+cmath
+-
+
+/home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp
+cstdlib
+-
+maze.hpp
+/home/destinxxy/Documents/RobotMaze/Maze/src/maze.hpp
+search.hpp
+/home/destinxxy/Documents/RobotMaze/Maze/src/search.hpp
+
+/home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp
+maze.hpp
+/home/destinxxy/Documents/RobotMaze/Maze/src/maze.hpp
+
+/home/destinxxy/Documents/RobotMaze/agent/src/search.cpp
+search.hpp
+/home/destinxxy/Documents/RobotMaze/agent/src/search.hpp
+

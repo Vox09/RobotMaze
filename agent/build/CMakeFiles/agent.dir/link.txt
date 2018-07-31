@@ -1,0 +1,2 @@
+/usr/bin/ar qc libagent.a  CMakeFiles/agent.dir/src/search.cpp.o
+/usr/bin/ranlib libagent.a

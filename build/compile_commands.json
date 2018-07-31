@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/destinxxy/Documents/RobotMaze/build",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc -I/home/destinxxy/Documents/RobotMaze/datastructure/inc    -std=c++11 -o CMakeFiles/main.dir/Maze/src/maze.cpp.o -c /home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp",
+  "file": "/home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp"
+},
+{
+  "directory": "/home/destinxxy/Documents/RobotMaze/build",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc -I/home/destinxxy/Documents/RobotMaze/datastructure/inc    -std=c++11 -o CMakeFiles/main.dir/Maze/src/main.cpp.o -c /home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp",
+  "file": "/home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp"
+},
+{
+  "directory": "/home/destinxxy/Documents/RobotMaze/build",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc -I/home/destinxxy/Documents/RobotMaze/datastructure/inc    -std=c++11 -o CMakeFiles/main.dir/agent/src/search.cpp.o -c /home/destinxxy/Documents/RobotMaze/agent/src/search.cpp",
+  "file": "/home/destinxxy/Documents/RobotMaze/agent/src/search.cpp"
+}
+]
