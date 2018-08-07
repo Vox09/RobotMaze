@@ -1,5 +1,5 @@
 /*
- * File:   df-search.hpp
+ * File:   search.hpp
  * Author: Xu Xinyuan
  * Date:   2018-07-05
  */
@@ -8,6 +8,7 @@
 #define SEARCH_HPP
 
 #include "maze.hpp"
+#include "xxylist.hpp"
 
 #include <cmath>
 using namespace maze;
@@ -18,32 +19,6 @@ namespace solution
         ERROR,
         DEAD
     }result_t;
-
-    class Node:public Cell
-    {
-    public:
-        Node();
-        Node(Cell);
-        Node(Cell,Node*);
-        Node* parent;
-        Node* previous;     //only used in open and close list
-        int cost;
-    };
-
-    class Listxxy
-    {
-        Node* base;
-        Node* top;
-        int size;
-    public:
-        Listxxy():base(nullptr),top(nullptr),size(0){}
-        ~Listxxy(){}
-        bool IsEmpty(void);
-        Node GetTop(void);
-        Node Pop(void);
-        Node GetMinCost(void);
-        bool Push(Node);
-    };
 
     class SearchAlgorithm
     {
@@ -61,6 +36,8 @@ namespace solution
         bool GoalTest(Node*);
         dir_t GreedyChoice(Node*,bool*);
         float HeuristicCost(Node*,dir_t);
+        float HeuristicCost(Node*);
+        float HeuristicCost(int,int);
         dir_t IntToDir(int);
     public:
         // Set method
@@ -71,6 +48,7 @@ namespace solution
         result_t Search();
         result_t GreedySearch(int);
         result_t AStarSearch();
+        void EvaluateNode(Node*,int);
         void Display();
         
     };

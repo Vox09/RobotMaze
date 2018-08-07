@@ -7,6 +7,7 @@
 #define MAZE_HPP
 
 #include <iostream>
+#include <fstream>
 #include <random>
 #include <ctime>
 #include <cstdlib>
@@ -18,7 +19,7 @@
 
 namespace maze
 {
-    enum{OUT=-1,UNVISITED, VISITED,DEAD, EXPLORED};
+    enum{OUT=-1,UNVISITED, VISITED,DEAD, EXPLORED,SOLVED};
     typedef char dir_t;
 	
 	class Cell
@@ -78,11 +79,14 @@ namespace maze
         void SetEntry(int, int);
         void SetExit(int, int);
         void SetCellExplored(int, int);
+		void SetCellSolution(int, int);
         void SetCellDEAD(int, int);
         void SetWallProp(float);
         // Other method
 		void ShowStatus();
 		void Display();
+        void WriteToFile(std::string);
+        void LoadFromFile(std::string);
         void Generate();
         dir_t IntToDir(int);
 	};

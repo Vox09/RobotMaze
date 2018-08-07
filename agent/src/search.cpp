@@ -1,5 +1,5 @@
 /*
- * File:   df-search.cpp
+ * File:   search.cpp
  * Author: Xu Xinyuan
  * Date:   2018-07-05
  */
@@ -7,54 +7,6 @@
 #include "search.hpp"
 
 using namespace solution;
-//====================node staff=========================
-Node::Node():Cell(),parent(nullptr),previous(nullptr),cost(0){};
-Node::Node(Cell c):Cell(c),parent(nullptr), cost(0){};
-Node::Node(Cell c,Node* p):Cell(c),parent(p),cost(0){};
-
-//====================list staff=========================
-bool Listxxy::IsEmpty() {return (size == 0);}
-bool Listxxy::Push(Node e)
-{
-    Node* tmp;  
-    tmp = top;  
-    top = new Node;  
-    if(!top) return false;  
-    *top = e;  
-    top->previous = tmp;
-    size++;
-    return true;
-}
-  
-Node Listxxy::Pop()  
-{
-    if(size<=0) return Node();  
-    Node tmp;  
-    tmp = *top;
-    delete top;  
-    top = tmp.previous;  
-    size--;
-    return tmp;
-}
-  
-Node Listxxy::GetTop() 
-{
-    return *top;
-}
-  
-Node Listxxy::GetMinCost()  
-{    
-    if(IsEmpty())return Node();
-    Node* tmp = top;  
-    int minCost = tmp->cost;
-    for(tmp;tmp!=nullptr;tmp = tmp->previous)
-        minCost = tmp->cost<minCost?tmp->cost:minCost;
-    tmp = top;    
-    for(tmp;tmp->cost > minCost;tmp = tmp->previous);
-    return *tmp;
-}
-  
-//=================search staff======================
 SearchAlgorithm::SearchAlgorithm()
 {home[0] = -1; home[1] = -1;dest[0] = -1; dest[1] = -1;}
 
@@ -78,13 +30,16 @@ void SearchAlgorithm::SetMaze(Maze* _m)
     g_min = rowlimit*collimit;
 //    entry.SetV(EXPLORED);
     stack.Push(Node(entry));
-    open_list.Push(Node(entry));
+    Node n(entry);
+    EvaluateNode(&n,0);
+    open_list.Push(n);
 }
 
 
 result_t  SearchAlgorithm::Search()  
 {  
     return GreedySearch(0);  
+    //return AStarSearch();  
 }
   
 
@@ -123,11 +78,18 @@ dir_t SearchAlgorithm::IntToDir(int i)
     }
 }
 
+float SearchAlgorithm::HeuristicCost(int r, int c)
+{
+    int fr = dest[0];
+    int fc = dest[1];
+    return sqrt((r-fr)*(r-fr)+(c-fc)*(c-fc));
+    //return fr+fc-r-c;
+}
+
 float SearchAlgorithm::HeuristicCost(Node* n, dir_t dir)
 {
     int r = n->GetRow();
     int c = n->GetCol();
-    //int g = n->cost;
     switch(dir)
     {
         case 'N': r--;break;
@@ -135,10 +97,14 @@ float SearchAlgorithm::HeuristicCost(Node* n, dir_t dir)
         case 'E': c++;break;
         case 'W': c--;break; 
     }
-    int fr = dest[0];
-    int fc = dest[1];
-    return sqrt((r-fr)*(r-fr)+(c-fc)*(c-fc));
+    return HeuristicCost(r,c);
+}
 
+float SearchAlgorithm::HeuristicCost(Node* n)
+{
+    int r = n->GetRow();
+    int c = n->GetCol();
+    return HeuristicCost(r,c);
 }
 
 dir_t SearchAlgorithm::GreedyChoice(Node* n, bool* dir)
@@ -162,6 +128,13 @@ dir_t SearchAlgorithm::GreedyChoice(Node* n, bool* dir)
     if(mincost>1.5*g_min+3) result = '\0';
     return result;
 }
+
+void SearchAlgorithm::EvaluateNode(Node* pn ,int f)
+{
+    pn->gx = f;
+    pn->hx = HeuristicCost(pn);
+}
+
 
 result_t  SearchAlgorithm::GreedySearch(int _cost)
 {
@@ -189,7 +162,7 @@ result_t  SearchAlgorithm::GreedySearch(int _cost)
         if(nn.GetV() == EXPLORED ||  nn.GetV() == DEAD)  
             n.Close(nd);
         else{
-            nn.cost = _cost;
+            nn.gx = _cost;
             stack.Push(nn);
             result_t result = GreedySearch(_cost);
             if(result == SOLVED) return result;
@@ -202,21 +175,57 @@ result_t  SearchAlgorithm::GreedySearch(int _cost)
     return DEAD;
 }
 
-//result_t SearchAlgorithm::AStarSearch()  
-//{
-    //while(!open_list.IsEmpty())  
-    //{  
-//#ifdef ADISPLAY
-        //if(_cost%3==0)  
-        //{
-            //Display();
-////          std::cout<<stack.GetMinCost().cost<<std::endl;
-            //system("sleep 0.1");
-            //system("clear");
-        //}
-//#endif  
-        //Node n = open_list.GetMinCost();  
-        //if()
-    //}
-        //return SOLVED;
-//}
+result_t SearchAlgorithm::AStarSearch()  
+{
+    result_t result = DEAD;
+    bool dir[4];
+    int curcost=0;
+    Node* end;
+    while(!open_list.IsEmpty())
+    {
+        Node n = open_list.GetMinCost();
+        cout<<"current node "<<n.GetRow()<<" , "<<n.GetCol()<<endl;
+        curcost = n.gx;
+        if(GoalTest(&n))
+        {
+            end = &n;
+            result = SOLVED;
+            break;
+        }
+        maze->SetCellDEAD(n.GetRow(),n.GetCol());
+        close_list.Push(n);
+        GetCellAvailiable(&n,dir,rowlimit,collimit);
+        for(int i=0;i<4;i++)
+        {
+            if(dir[i] && !n.CellOut(i,rowlimit,collimit))
+            {
+                // set parent pointer to the element in the list which is stored
+                Node nn(maze->GetNextCell(&n,IntToDir(i)),close_list.GetTopP());
+                EvaluateNode(&nn,curcost+1);
+                if(!open_list.Contain(&nn) && !close_list.Contain(&nn)) {
+                    maze->SetCellExplored(nn.GetRow(), nn.GetCol());
+                    open_list.Push(nn);
+                }
+            }
+        }
+//        open_list.Display();
+//        cout<<"=================="<<endl;
+//        close_list.Display();
+#ifdef ADISPLAY
+        Display();
+        std::cout<<n.gx<<std::endl;
+        std::cout<<n.hx<<std::endl;
+        std::cout<<n.Fx()<<std::endl;
+        system("sleep 0.1");
+        system("clear");
+#endif
+        open_list.Delete(&n);
+    }
+    for(Node* tmp=end;tmp != nullptr;tmp=tmp->parent)
+    {
+        stack.Push(*tmp);
+        maze->SetCellSolution(tmp->GetRow(),tmp->GetCol());
+    }
+    Display();
+    return result;
+}

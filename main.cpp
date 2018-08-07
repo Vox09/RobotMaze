@@ -30,6 +30,7 @@ int main(int argc, char** argv){
     map.SetEntry(0,0);
     map.SetExit(num_rows-1,num_cols-1);
     map.Display();
+    map.WriteToFile("map/maze.maze");
     dfs.SetMaze(&map);
     dfs.Search();
 	dfs.Display();

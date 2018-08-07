@@ -123,33 +123,6 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-Maze/src/main.o: Maze/src/main.cpp.o
-
-.PHONY : Maze/src/main.o
-
-# target to build an object file
-Maze/src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Maze/src/main.cpp.o
-.PHONY : Maze/src/main.cpp.o
-
-Maze/src/main.i: Maze/src/main.cpp.i
-
-.PHONY : Maze/src/main.i
-
-# target to preprocess a source file
-Maze/src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Maze/src/main.cpp.i
-.PHONY : Maze/src/main.cpp.i
-
-Maze/src/main.s: Maze/src/main.cpp.s
-
-.PHONY : Maze/src/main.s
-
-# target to generate assembly for a file
-Maze/src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Maze/src/main.cpp.s
-.PHONY : Maze/src/main.cpp.s
-
 Maze/src/maze.o: Maze/src/maze.cpp.o
 
 .PHONY : Maze/src/maze.o
@@ -204,6 +177,60 @@ agent/src/search.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/agent/src/search.cpp.s
 .PHONY : agent/src/search.cpp.s
 
+data_structure/src/xxylist.o: data_structure/src/xxylist.cpp.o
+
+.PHONY : data_structure/src/xxylist.o
+
+# target to build an object file
+data_structure/src/xxylist.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o
+.PHONY : data_structure/src/xxylist.cpp.o
+
+data_structure/src/xxylist.i: data_structure/src/xxylist.cpp.i
+
+.PHONY : data_structure/src/xxylist.i
+
+# target to preprocess a source file
+data_structure/src/xxylist.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/data_structure/src/xxylist.cpp.i
+.PHONY : data_structure/src/xxylist.cpp.i
+
+data_structure/src/xxylist.s: data_structure/src/xxylist.cpp.s
+
+.PHONY : data_structure/src/xxylist.s
+
+# target to generate assembly for a file
+data_structure/src/xxylist.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/data_structure/src/xxylist.cpp.s
+.PHONY : data_structure/src/xxylist.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,15 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... Maze/src/main.o"
-	@echo "... Maze/src/main.i"
-	@echo "... Maze/src/main.s"
 	@echo "... Maze/src/maze.o"
 	@echo "... Maze/src/maze.i"
 	@echo "... Maze/src/maze.s"
 	@echo "... agent/src/search.o"
 	@echo "... agent/src/search.i"
 	@echo "... agent/src/search.s"
+	@echo "... data_structure/src/xxylist.o"
+	@echo "... data_structure/src/xxylist.i"
+	@echo "... data_structure/src/xxylist.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

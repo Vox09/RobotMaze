@@ -9,6 +9,8 @@
 ../Maze/inc/maze.hpp
 iostream
 -
+fstream
+-
 random
 -
 ctime
@@ -19,16 +21,16 @@ cstdlib
 ../agent/inc/search.hpp
 maze.hpp
 ../agent/inc/maze.hpp
+xxylist.hpp
+../agent/inc/xxylist.hpp
 cmath
 -
 
-/home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp
-cstdlib
--
+../data_structure/inc/xxylist.hpp
 maze.hpp
-/home/destinxxy/Documents/RobotMaze/Maze/src/maze.hpp
-search.hpp
-/home/destinxxy/Documents/RobotMaze/Maze/src/search.hpp
+../data_structure/inc/maze.hpp
+iostream
+-
 
 /home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp
 maze.hpp
@@ -37,4 +39,16 @@ maze.hpp
 /home/destinxxy/Documents/RobotMaze/agent/src/search.cpp
 search.hpp
 /home/destinxxy/Documents/RobotMaze/agent/src/search.hpp
+
+/home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.cpp
+xxylist.hpp
+/home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.hpp
+
+/home/destinxxy/Documents/RobotMaze/main.cpp
+cstdlib
+-
+maze.hpp
+/home/destinxxy/Documents/RobotMaze/maze.hpp
+search.hpp
+/home/destinxxy/Documents/RobotMaze/search.hpp
 

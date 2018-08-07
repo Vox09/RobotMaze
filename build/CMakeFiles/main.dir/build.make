@@ -81,28 +81,28 @@ CMakeFiles/main.dir/Maze/src/maze.cpp.o.provides: CMakeFiles/main.dir/Maze/src/m
 CMakeFiles/main.dir/Maze/src/maze.cpp.o.provides.build: CMakeFiles/main.dir/Maze/src/maze.cpp.o
 
 
-CMakeFiles/main.dir/Maze/src/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/Maze/src/main.cpp.o: ../Maze/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/destinxxy/Documents/RobotMaze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/Maze/src/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Maze/src/main.cpp.o -c /home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o: ../data_structure/src/xxylist.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/destinxxy/Documents/RobotMaze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o -c /home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.cpp
 
-CMakeFiles/main.dir/Maze/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Maze/src/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp > CMakeFiles/main.dir/Maze/src/main.cpp.i
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/data_structure/src/xxylist.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.cpp > CMakeFiles/main.dir/data_structure/src/xxylist.cpp.i
 
-CMakeFiles/main.dir/Maze/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Maze/src/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp -o CMakeFiles/main.dir/Maze/src/main.cpp.s
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/data_structure/src/xxylist.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.cpp -o CMakeFiles/main.dir/data_structure/src/xxylist.cpp.s
 
-CMakeFiles/main.dir/Maze/src/main.cpp.o.requires:
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.requires:
 
-.PHONY : CMakeFiles/main.dir/Maze/src/main.cpp.o.requires
+.PHONY : CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.requires
 
-CMakeFiles/main.dir/Maze/src/main.cpp.o.provides: CMakeFiles/main.dir/Maze/src/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Maze/src/main.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/Maze/src/main.cpp.o.provides
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.provides: CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.provides
 
-CMakeFiles/main.dir/Maze/src/main.cpp.o.provides.build: CMakeFiles/main.dir/Maze/src/main.cpp.o
+CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.provides.build: CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o
 
 
 CMakeFiles/main.dir/agent/src/search.cpp.o: CMakeFiles/main.dir/flags.make
@@ -129,21 +129,47 @@ CMakeFiles/main.dir/agent/src/search.cpp.o.provides: CMakeFiles/main.dir/agent/s
 CMakeFiles/main.dir/agent/src/search.cpp.o.provides.build: CMakeFiles/main.dir/agent/src/search.cpp.o
 
 
+CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/destinxxy/Documents/RobotMaze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/destinxxy/Documents/RobotMaze/main.cpp
+
+CMakeFiles/main.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/destinxxy/Documents/RobotMaze/main.cpp > CMakeFiles/main.dir/main.cpp.i
+
+CMakeFiles/main.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/destinxxy/Documents/RobotMaze/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+
+CMakeFiles/main.dir/main.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/main.cpp.o.requires
+
+CMakeFiles/main.dir/main.cpp.o.provides: CMakeFiles/main.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/main.cpp.o.provides
+
+CMakeFiles/main.dir/main.cpp.o.provides.build: CMakeFiles/main.dir/main.cpp.o
+
+
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/Maze/src/maze.cpp.o" \
-"CMakeFiles/main.dir/Maze/src/main.cpp.o" \
-"CMakeFiles/main.dir/agent/src/search.cpp.o"
+"CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o" \
+"CMakeFiles/main.dir/agent/src/search.cpp.o" \
+"CMakeFiles/main.dir/main.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/Maze/src/maze.cpp.o
-main: CMakeFiles/main.dir/Maze/src/main.cpp.o
+main: CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o
 main: CMakeFiles/main.dir/agent/src/search.cpp.o
+main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/destinxxy/Documents/RobotMaze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/destinxxy/Documents/RobotMaze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -152,8 +178,9 @@ CMakeFiles/main.dir/build: main
 .PHONY : CMakeFiles/main.dir/build
 
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Maze/src/maze.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Maze/src/main.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/agent/src/search.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main.cpp.o.requires
 
 .PHONY : CMakeFiles/main.dir/requires
 

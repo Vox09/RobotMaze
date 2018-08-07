@@ -137,7 +137,8 @@ void Maze::Display()
             if(!pc[i][j].GetWallState()[3])cout<<"|";
             else cout<<" ";
   			if(pc[i][j].GetV()==EXPLORED)cout<<" x ";
-            else if(pc[i][j].GetV()==DEAD)cout<<" F ";  
+            else if(pc[i][j].GetV()==DEAD)cout<<" D ";
+            else if(pc[i][j].GetV()==SOLVED)cout<<" S ";
             else cout<<"   ";
 		}
         if(!pc[i][col-1].GetWallState()[1])cout<<"|";
@@ -366,6 +367,8 @@ Cell Maze::GetEntry(){return pc[home[0]][home[1]];}
 Cell Maze::GetExit(){return pc[dest[0]][dest[1]];}
 void Maze::SetWallProp(float p){wallProp = p;}
 
+void Maze::SetCellSolution(int _r, int _c)
+{pc[_r][_c].SetV(SOLVED);}
 void Maze::SetCellExplored(int _r,int _c)
 {pc[_r][_c].SetV(EXPLORED);}
 
@@ -392,4 +395,45 @@ dir_t Maze::IntToDir(int _i)
         case 3 :return 'W';
     }
     return '\0';  
+}
+
+void Maze::WriteToFile(std::string name)
+{
+    std::ofstream outf(name);
+
+	for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            outf<<"+";
+            if(!pc[i][j].GetWallState()[0])
+                outf<<"---";
+            else outf<<"   ";
+        }
+		outf<<"+"<<endl;
+		for(int j=0;j<col;j++)
+        {
+            if(!pc[i][j].GetWallState()[3])outf<<"|";
+            else outf<<" ";
+  			if(pc[i][j].GetV()==EXPLORED)outf<<" x ";
+            else if(pc[i][j].GetV()==DEAD)outf<<" D ";
+            else if(pc[i][j].GetV()==SOLVED)outf<<" S ";
+            else outf<<"   ";
+		}
+        if(!pc[i][col-1].GetWallState()[1])outf<<"|";
+        outf<<endl;
+    }
+	for(int j=0;j<col;j++)outf<<"+---";
+        outf<<"+"<<endl;
+}
+
+void Maze::LoadFromFile(std::string name)
+{
+    std::ifstream inf(name);
+    std::string s;
+    while(getline(inf,s))
+    {
+       s.length(); 
+    }
+
 }

@@ -1,17 +1,22 @@
 [
 {
   "directory": "/home/destinxxy/Documents/RobotMaze/build",
-  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc -I/home/destinxxy/Documents/RobotMaze/datastructure/inc    -std=c++11 -o CMakeFiles/main.dir/Maze/src/maze.cpp.o -c /home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/data_structure/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc    -std=gnu++11 -o CMakeFiles/main.dir/Maze/src/maze.cpp.o -c /home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp",
   "file": "/home/destinxxy/Documents/RobotMaze/Maze/src/maze.cpp"
 },
 {
   "directory": "/home/destinxxy/Documents/RobotMaze/build",
-  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc -I/home/destinxxy/Documents/RobotMaze/datastructure/inc    -std=c++11 -o CMakeFiles/main.dir/Maze/src/main.cpp.o -c /home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp",
-  "file": "/home/destinxxy/Documents/RobotMaze/Maze/src/main.cpp"
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/data_structure/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc    -std=gnu++11 -o CMakeFiles/main.dir/data_structure/src/xxylist.cpp.o -c /home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.cpp",
+  "file": "/home/destinxxy/Documents/RobotMaze/data_structure/src/xxylist.cpp"
 },
 {
   "directory": "/home/destinxxy/Documents/RobotMaze/build",
-  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc -I/home/destinxxy/Documents/RobotMaze/datastructure/inc    -std=c++11 -o CMakeFiles/main.dir/agent/src/search.cpp.o -c /home/destinxxy/Documents/RobotMaze/agent/src/search.cpp",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/data_structure/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc    -std=gnu++11 -o CMakeFiles/main.dir/agent/src/search.cpp.o -c /home/destinxxy/Documents/RobotMaze/agent/src/search.cpp",
   "file": "/home/destinxxy/Documents/RobotMaze/agent/src/search.cpp"
+},
+{
+  "directory": "/home/destinxxy/Documents/RobotMaze/build",
+  "command": "/usr/bin/c++    -I/home/destinxxy/Documents/RobotMaze/Maze/inc -I/home/destinxxy/Documents/RobotMaze/data_structure/inc -I/home/destinxxy/Documents/RobotMaze/agent/inc    -std=gnu++11 -o CMakeFiles/main.dir/main.cpp.o -c /home/destinxxy/Documents/RobotMaze/main.cpp",
+  "file": "/home/destinxxy/Documents/RobotMaze/main.cpp"
 }
 ]

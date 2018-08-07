@@ -1,14 +1,12 @@
-PROJECT(RoboMaze CXX)
 cmake_minimum_required(VERSION 3.5)
-add_definitions(-std=c++11)  
+project(RobotMaze)
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
+set(CMAKE_CXX_STANDARD 11)
 
-file(GLOB_RECURSE MAZE_SRC "Maze/src/*.cpp")
-file(GLOB_RECURSE AGENT_SRC "agent/src/*.cpp")
-file(GLOB_RECURSE DATA_STRUCTURE_SRC 
-    "data_structure/src/*.cpp")
+file(GLOB MAZE "Maze/src/*.cpp")
+file(GLOB DATA_STRUCTURE "data_structure/src/*.cpp")
+file(GLOB AGENT "agent/src/*.cpp")
 INCLUDE_DIRECTORIES(Maze/inc)
+INCLUDE_DIRECTORIES(data_structure/inc)
 INCLUDE_DIRECTORIES(agent/inc)
-INCLUDE_DIRECTORIES(datastructure/inc)
-ADD_EXECUTABLE(main ${MAZE_SRC} ${AGENT_SRC} 
-    ${DATA_STRUCTURE_SRC})
+ADD_EXECUTABLE(main ${MAZE} ${DATA_STRUCTURE} ${AGENT} main.cpp)
